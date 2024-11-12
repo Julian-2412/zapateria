@@ -10,13 +10,7 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Middleware para servir archivos estáticos desde la carpeta 'public'
-app.use(express.static(path.join(__dirname, 'public')));
 
-// Endpoint para la página principal
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'index.html'));
-});
 
 // Configuración de la base de datos
 const connection = mysql.createConnection({
