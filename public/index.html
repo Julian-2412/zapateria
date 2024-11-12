@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Zharick's Shoes</title>
+</head>
+<body>
+    <header id="content">
+        <nav>
+            <div class="logo">Dream Shoes</div>
+            
+            <div class="cart-icon" onclick="toggleCart()">
+                🛒 <span class="cart-count">0</span>
+            </div>
+        </nav>
+        <div id="logo1">
+            <img src="Imagenes/Logo.jpg" height="200" width="200"> 
+        </div>
+        <div class="filter-container">
+            
+            <input type="text" id="search-input" placeholder="Buscar por nombre..." oninput="filterProducts()" />
+            
+            <input type="number" id="price-input" placeholder="Precio máximo..." oninput="filterProducts()" />
+        </div>      
+    </header>
+
+    <main id="content">
+        <div class="products-grid" id="products-container">
+            <!-- Los productos se cargarán dinámicamente -->
+        </div>
+    </main>
+
+<!------------------------------------------>
+    <div id="warning-modal" class="modal_talla" style="display: none;">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeModal()">&times;</span>
+            <p id="modal-message"></p>
+        </div>
+    </div>  
+<!----------------------------------------------------------------->
+
+    <div id="cart-modal">
+        <div class="cart-content">
+            <h2>Carrito de Compras</h2>
+            <div id="cart-items">
+                <!-- Los items del carrito se cargarán dinámicamente -->
+            </div>
+            <div id="cart-total">
+                <h3>Total: $<span id="total-amount">0</span></h3>
+            </div>
+            <button onclick="checkout()" class="add-to-cart">Realizar Pedido</button>
+            <div class="form-container">
+                <div class="form-group">
+                    <label for="userPhone"></label>
+                    <input 
+                        type="tel" 
+                        id="userPhone" 
+                        name="userPhone" 
+                        pattern="[0-9]{10}"
+                        placeholder="Ingresa tu número de teléfono"
+                        required
+                        class="form-control"
+                    />
+                    <small class="form-text"></small>
+                </div>
+            </div>
+            <button onclick="toggleCart()" class="add-to-cart" style="background: #666;">Cerrar</button>
+        </div>
+    </div>
+    
+    <script src="scripts.js"></script>
+</body>
+<footer>
+    <div class="footer-container">
+        <div class="footer-left">
+            <h4>Sobre Nosotros</h4>
+            <p>Somos una tienda de calzado dedicada a ofrecer los mejores productos para ti. Nuestra misión es brindar comodidad, estilo y calidad en cada paso.</p>
+        </div>
+        <div class="footer-right">
+            <h4>Contáctanos</h4>
+            <p>Correo electrónico: <a href="mailto:contacto@zharicksshoes.com">contacto@zharicksshoes.com</a></p>
+            <p>Teléfono: +123 456 7890</p>
+            <p>Dirección: Calle Ficticia 123, Ciudad, País</p>
+            <div class="social-icons">
+                <a href="#" class="social-icon">📘</a>
+                <a href="#" class="social-icon">🐦</a>
+                <a href="#" class="social-icon">📸</a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2024 Zharick's Shoes. Todos los derechos reservados.</p>
+    </div>
+</footer>
+</html>
